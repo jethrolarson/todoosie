@@ -1,0 +1,21 @@
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/">
+<channel>
+  <title>{{tl.name}}</title>
+  <link>http://todoosie.com/list/{{tl.key.id}}</link>
+  <description>Easy sharing and tracking</description>
+  <pubDate>{{tl.updated}}</pubDate>
+  <language>en</language>
+  {%for task in tl.tasks%}
+    {%ifequal task.deleted False%}
+    <item>
+      <title>{{task.text|escape}}</title>
+      <link>http://todoosie.com/list/{{tl.key.id}}</link>
+      <pubDate>task.updated</pubDate>  
+      <content:encoded>{%if task.done%}done{%else%}undone{%endif%}</content:encoded>
+    </item>
+    {%endifequal%}
+  {%endfor%}
+</channel>

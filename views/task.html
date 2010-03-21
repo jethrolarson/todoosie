@@ -1,0 +1,9 @@
+<li {%if task.done%}class="done"{%endif%}>
+  <form action="/task/update" method="post">
+    <div class="handle"></div>
+    <input type="checkbox" name="done" id="done{{task.key}}" class="done" title="Done?" {%if task.done%}checked{%endif%}/>
+    <input type="text" autocomplete="off" name="text" class="text" value="{{task.text|escape}}"/><button type="submit" name="update" class="update" value="True">update</button><button type="submit" name="delete" class="delete" value="True" title="delete">x</button>
+    <input type="hidden" name="tkey" value="{{task.key}}" class="tkey" />
+    <input type="hidden" name="torder" class="torder" value="{{task.order}}" />
+  </form>
+</li>

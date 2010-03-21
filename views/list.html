@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8" />
+  <title>{%if tl%}{{tl.name}} - {%endif%}Todoosie</title>
+  <link rel="stylesheet" href="/static/master.css" />
+  <link rel="alternate" type="application/rss+xml" href="/list/{{tl.key}}.xml" />
+  <!--[if IE]><script src="/static/html5.js"></script><![endif]-->
+</head>
+<body>
+  <script>document.body.className="jsOn";</script>
+  <div id="page">
+    {%if tl%}
+    <a id="miniLogo" href="/" title="Home"><img src="/static/logo_small.png" alt="Todoosie" /></a>
+    <form method="post" action="/list/{{tl.key}}/update" id="updateName">
+      <input id="name" name="name" type="text" class="text" value="{{tl.name}}"/>
+      <button id="tlid" name="tlkey" value="{{tl.key}}" class="update">Update</button>
+    </form>
+    {%endif%}
+    <div id="listWrap">
+      <ul id="list">
+      {%for task in tasks%}
+        {%ifequal task.deleted False%}
+        {% include "task.html" %}
+        {%endifequal%}
+      {%endfor%}
+      </ul>
+      <form id="newTask" method="POST" action="/list/{{tl.key}}/add">
+        <button type="submit" title="Add Task">+</button>
+      </form>
+    </div>
+    <div id="randomTip">
+      <p>{{tip}}</p>
+    </div>
+    {% include "footer.html" %}
+  </div>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+  <script src="/static/jquery-ui-1.7.2.custom.min.js"></script>  
+	<script src="/static/lib.js"></script>
+	<script src="/static/list.js"></script>
+</body>
+</html>
