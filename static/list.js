@@ -108,7 +108,7 @@ $(function(){
       });
     });
     return false;
-  })
+  });
   function bindListItemEvents(){
     var $this = $(this);
     $this.find(".delete").click(taskUpdate);
@@ -122,7 +122,7 @@ $(function(){
           $t.blur();
           $prev.focus();
         }
-      }else if(e.keyCode==40 || e.keyCode==13){
+      }else if(e.keyCode==40 || e.keyCode==13 || (e.keyCode==9 && !e.shiftKey)){
         $t.blur();
         var $li = $(this).parent().parent();
         var $next = $li.next();

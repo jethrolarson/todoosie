@@ -26,7 +26,7 @@ li{margin: 4px 0 4px 18px}
 p{margin: 0 0 1em;}
 
 footer,section,header{display:block;}
-#page{max-width: 485px;margin: 0 auto;}
+#page{max-width: 600px;margin: 0 auto;}
 
 h1{
   margin: 24px 0 12px;}
@@ -39,7 +39,7 @@ h1{
     width: 300px;
     border: 1px solid #aaa;}
   #updateName #name{
-    width: 476px;
+    width: 591px;
     margin-bottom: 13px;
     border-bottom: 2px solid #1C3697;
   }
@@ -88,11 +88,11 @@ h1{
       width: 16px; height: 23px;
       margin-left: 1px; 
       background:  url(cb.png) 0 5px no-repeat;}
-    #list li .cb:hover{background-position: 0 -20px; cursor: pointer;}
+    #list li .cb:hover{background-position: 0 -20px; cursor: pointer; background-color:#ffa;}
     #list li .cb.checked{background-position: 0 -46px;}
     #list li .text{
       float:left; 
-      width: 440px; height: 22px;
+      width: 554px; height: 22px;
       border-width: 1px 0;
       padding: 1px 3px;
       font-size: 18px;}

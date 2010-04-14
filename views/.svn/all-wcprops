@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/atomicpie/!svn/ver/6/todoosie/views
+END
+tips.yaml
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/atomicpie/!svn/ver/55/todoosie/views/tips.yaml
+END
+footer.html
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/atomicpie/!svn/ver/55/todoosie/views/footer.html
+END
+task.html
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/atomicpie/!svn/ver/55/todoosie/views/task.html
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/atomicpie/!svn/ver/6/todoosie/views/__init__.py
+END
+default.html
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/atomicpie/!svn/ver/57/todoosie/views/default.html
+END
+rss.html
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/atomicpie/!svn/ver/57/todoosie/views/rss.html
+END
+error.html
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/atomicpie/!svn/ver/55/todoosie/views/error.html
+END
+list.html
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/atomicpie/!svn/ver/57/todoosie/views/list.html
+END

@@ -1,0 +1,133 @@
+body{
+  margin: 24px; padding: 0;
+  font: 18px/1.5 Arial;
+}
+input[type=checkbox]{margin-right: 0;}
+input[type=text]{
+  font-size: 18px;
+  border:1px solid transparent;}
+  input[type=text]:hover,
+  input[type=text]:focus{
+    background-color: #EFFFEF;
+    border-color: #ccc}
+  input[type=text]:focus{
+    border-color: #ccc !important;
+    background-color:#FFFFE9}  
+button{
+  height: 26px;
+  padding: 0px 6px;position: relative;
+  border: 1px solid #AAA; 
+  background: #ECE9D8;
+  font-size: 16px;
+  font-family: consolas;
+}
+  button:hover{background: #F7F5E8;}
+
+.update{display:none;}
+
+a{color: #5a5;}
+a:visited{color:#393;}
+a:hover{color:#8d8}
+
+footer,section,header{display:block;}
+#page{max-width: 485px;margin: 0 auto;}
+h1{
+  margin: 24px 0 12px; 
+  border-bottom: 2px solid #ddd;}
+  h1 span{color:green}
+  
+  #updateName input,
+  #updateName button{font-size: 27px}
+  #newList #name{
+    width: 377px;
+    border: 1px solid #aaa;}
+  #name{width: 482px;}
+  #text{border-color: #ccc}
+  #add button{ color: green}
+#list{margin: 0;padding: 0;}
+  #list li{
+    clear:both;
+    padding: 0 0 0 4px;
+    line-height: 28px;
+    list-style:none; }
+    #list li strong{font-weight: normal;}
+    #list li .cb{
+      display:block;
+      float:left;
+      width: 17px; height: 26px;
+      background: #aaa url(grab2.png) -15px 0;}
+    #list li .cb:hover{background-position: -15px -26px; cursor: pointer;}
+    #list li .cb.checked{background-position: -15px -52px;}
+    #list li .text{float:left; border-width: 1px 0;}
+    #list li.done .text{text-decoration: line-through;}
+    #list li.done .text:focus{text-decoration: none;}
+    #list li .delete{
+      display:block;
+      float:left;
+      display:none; color:#c44; border-left: 0;}
+    #list li .add{
+      display:block;
+      float:left;
+      width: 26px;height: 26px;
+      padding:0;
+      border: 0; 
+      text-indent: -9999px;
+      background: #aaa url(grab2.png) -32px 0;}
+    #list li .add:hover{background-position: -32px -26px;}
+    #list li:hover .delete{display:inline}
+    #list li:hover input[type=text]{
+      background-color: #EFFFEF;
+      border-color: #aaa}
+  #list .handle{
+    float:left;
+    display:block;
+    vertical-align: middle;
+    width: 15px;height: 26px;
+    background: #fff url(grab2.png) no-repeat; 
+    cursor: -moz-grab;}
+    #list .handle:hover{background-position: 0 -26px;}
+  #list input[type=text]{
+    width: 414px;
+    font-size: 18px;}
+  #list li.ui-sortable-helper{
+    opacity: .8;
+    cursor: -moz-grabbing;}
+    
+    
+#print{margin: 26px 4px 0;}
+#features{
+  margin-top: 48px;
+}
+    #email{margin-top: 20px;}
+  
+footer{
+  margin-top: 20px;
+  border-top: 2px solid #ddd;
+  color: #999}
+  
+  
+/*cleafix*/
+#list li:after{
+  content: '.';
+  display:block;
+  clear:both;
+  visibility: hidden;
+  height: 0;
+}
+#list li{zoom:1;}
+
+@media print{
+  #page{max-width: 95%}
+  button,
+  .handle,
+  footer,
+  #add{display:none;}
+  input[type=text]{border:0!important}
+<<<<<<< .mine
+}
+
+=======
+}
+
+#sortList{margin:0; padding:0;}
+  #sortList li{list-style:none; display:inline-block;}>>>>>>> .r25

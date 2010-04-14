@@ -1,0 +1,161 @@
+body{
+  margin: 24px; padding: 0;
+  font: 16px/1.5 Arial;
+}
+input[type=checkbox]{margin-right: 0;}
+
+.text{
+  padding: 4px;
+  font-size: 18px;
+  border:0 none;
+  background:#fff;
+  outline: 0;
+}
+
+.hide{position:absolute;left:-9999px;}
+.update{display:none;}
+
+a{color: #0038CF;}
+a:visited{color: #0031B7;}
+a:hover{color:#4872E7;}
+a img{border: 0}
+
+h3{margin:1em 0 0; color:#3A4D8F}
+ul{margin: 0; padding:0;}
+li{margin: 4px 0 4px 18px}
+p{margin: 0 0 1em;}
+
+footer,section,header{display:block;}
+#page{max-width: 485px;margin: 0 auto;}
+
+h1{
+  margin: 24px 0 12px;}
+  #newList input{font-size: 24px;}
+  #newList button{font-size: 24px;}
+  #prevLists{display:none;}
+  #updateName input,
+  #updateName button{font-size: 27px}
+  #newList #name{
+    width: 300px;
+    border: 1px solid #aaa;}
+  #updateName #name{
+    width: 476px;
+    margin-bottom: 13px;
+    border-bottom: 2px solid #1C3697;
+  }
+  #updateName #name:hover,
+  #updateName #name:focus{background:#EFF4FF;}
+  #name.default{color:#999;}
+  #text{border-color: #C7E2CF}
+  #add button{ color: green}
+
+#miniLogo{
+  display:block;
+  padding-bottom: 12px;}  
+  
+#list{margin: 0 0 0 -6px;padding: 0;}
+  #list li{
+    clear:both;
+    height:24px;
+    margin:0;padding: 0;
+    list-style:none;}
+    #list li:hover,
+    #list li:hover .text{background: #EFF4FF}
+    #list li.focus,
+    #list li.focus .text,
+    #list li.alone,
+    #list li.alone .text{background: #E0E7F7}
+    #list .handle{
+      float:left;
+      display:block;
+      visibility: hidden;
+      vertical-align: middle;
+      width: 10px;height: 24px;
+      background: #fff url(grab4.png); 
+      cursor: move;
+      cursor: -moz-grab;}
+    #list li:hover .handle,
+    #list li.focus .handle,
+    #list li.alone .handle{visibility: visible;}
+    #list li.ui-sortable-helper{
+      opacity: .8;
+      cursor: move;
+      cursor: -moz-grabbing;}
+    #list li strong{font-weight: normal;}
+    #list li .cb{
+      display:block;
+      float:left;
+      width: 16px; height: 23px;
+      margin-left: 1px; 
+      background:  url(cb.png) 0 5px no-repeat;}
+    #list li .cb:hover{background-position: 0 -20px; cursor: pointer;}
+    #list li .cb.checked{background-position: 0 -46px;}
+    #list li .text{
+      float:left; 
+      width: 440px; height: 22px;
+      border-width: 1px 0;
+      padding: 1px 3px;
+      font-size: 18px;}
+    .jsOn input.done{
+      left:-9999px;
+      position:absolute;}
+    #list li.done .text{text-decoration: line-through; color: #5D6A87}
+    #list li.done .text:focus{text-decoration: none;}
+    .add{display:none;}
+    #list li .delete{
+      display:none;
+      float:left;
+      width: 16px;height: 24px;
+      padding:0;
+      border: 0; 
+      text-indent: -9999px;
+      background:  url(cb.png) 0 -69px no-repeat;}
+    #list li .add:hover{background-position: -31px -25px;}
+    #list li:hover .delete{display:block}
+    #list #add{margin-left:10px;}
+    #list #add .cb{visibility:hidden}
+    #list #add:hover .cb,
+    #list #add.focus .cb,
+    #list #add.alone .cb{visibility:visible;}
+
+#newTask button{
+  display:block;
+  visibility:hidden;
+  height:8px;
+  width:100%;
+  cursor:pointer;}
+  #listWrap:hover #newTask button{visibility:visible;}
+    
+#print{margin: 26px 4px 0;}
+
+#randomTip p{margin-top:1em;
+  font-style:italic;
+  color:#999;}
+  
+footer{
+  margin-top: 20px;
+  border-top: 2px solid #ddd;
+  color: #999}
+  
+  .author{color:#999 !important}
+  
+  
+/*cleafix*/
+#list li:after{
+  content: '.';
+  display:block;
+  clear:both;
+  visibility: hidden;
+  height: 0;
+}
+#list li{zoom:1;}
+
+@media print{
+  #page{max-width: 95%}
+  button,
+  .handle,
+  footer,
+  #add,
+  #randomTip{display:none;}
+  .text{border:0!important}
+}

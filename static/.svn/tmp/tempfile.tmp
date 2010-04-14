@@ -1,0 +1,69 @@
+$(function(){
+  $("#add").submit(function(){
+    var ti = $("#text")[0],
+        $form = $(this).children("form"),
+        that = this;
+    if($.trim(ti.value).length>0){
+      $.post($form.attr("action"),$form.serialize(),function(data,msg){
+        $(data).insertBefore(that).hide().slideDown();
+        $("#text").val("").focus();
+        bindEvents();
+      });
+    }
+    return false;
+  });
+  //TODO AJAX post on sort
+  $("#list").sortable({cursor: "-moz-grabbing", handle: ".handle", axis: "y"});
+  
+  function replaceCheckboxes(){
+    $(":checkbox").each(function(){
+      if($(this).data("set"))return;
+      $(this).hide();
+      var cb = $('<a role="checkbox" class="cb" />').data("cb",this)
+        .click(function(){
+          var chk = $(this).toggleClass("checked").data("cb");
+          chk.checked = !chk.checked;
+          $(chk).click();
+        });
+      if(this.checked) cb.addClass("checked");
+      $(this).after(cb).data("set",true);
+    });
+  }
+  
+  function taskUpdate(){
+    var $this = $(this),
+        $form = $this.parent("form");
+    $.post("/task/update",$form.serialize(),function(data){
+      $form.parent().before(data).remove();
+      bindEvents();
+    });
+  }
+  function textEdited(){
+    if(this.defaultValue != this.value)
+      taskUpdate.call(this);
+  }
+  function bindEvents(){
+    $("#list li:not(#add) :checkbox").click(taskUpdate);
+    $("#list li:not(#add) :text").blur(textEdited);
+    $("#list li:not(#add) :text").keypress(function(e){
+      if(e.keyCode==13){
+        textEdited.call(this);
+        return false;
+      }
+    });
+    replaceCheckboxes();
+  }
+  bindEvents()
+  $("#print").click(function(){window.print()});
+  
+  $(".sort").click(function(){
+    var cur = $(this);
+    var sort = parseInt(this.rel);
+    var tlid = $("#tlid").val();
+    var data = "tlid="+tlid+"&sort="+(parseInt(sort/2))+"&dir="+(sort%2);
+    $.post("/list/"+tlid+"/sort", data, function(data, textStatus){
+      cur.attr("rel", (sort%2 ? --sort : ++sort));
+    }, "json");
+  });
+  
+});

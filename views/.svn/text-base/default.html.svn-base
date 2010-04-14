@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8" />
+  <title>{%if tl%}{{tl.name}} - {%endif%}Todoosie</title>
+  <link rel="stylesheet" href="/static/master.css" />
+  <!--[if IE]><script src="/static/html5.js"></script><![endif]-->
+</head>
+<body>
+  <div id="page">
+    <header>
+      <h1><img src="/static/logo.png" alt="Todoosie" /></h1>
+    </header>
+    <section>
+      <form method="post" action="/list/new" id="newList">
+        <input id="name" name="name" type="text" value="My List" class="default" />
+        <button type="submit">New List</button>
+      </form>
+      <ul>
+        <li>Extremely simple todo lists</li>
+        <li>No sign-up</li>
+        <li>Share with anyone</li>
+      </ul>
+      <div id="prevLists">
+        <h3 title="remembered via cookies">Lists you've used lately</h3>
+        <ul id="lists"></ul>
+      </div>
+      
+      <h3>How it works</h3>
+      <p>A custom URL is created when you start a list. You can share your list with anyone you want just by sending them the URL.</p>
+        
+    </section>
+    {% include "footer.html" %}
+  </div>
+  <script src="/static/jquery-1.4a2.min.js"></script>
+  <script src="/static/lib.js"></script>
+  <script src="/static/default.js"></script>
+</body>
+</html>
